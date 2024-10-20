@@ -90,6 +90,12 @@
             display: none;
         }
 
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+
         .logo img {
             width: 100px;
         }
@@ -104,10 +110,11 @@
             <h2>Create an Account</h2>
             <input type="email" placeholder="Email ID" id="email">
             <input type="password" placeholder="Create a Password" id="password">
+            <input type="password" placeholder="Confirm Password" id="confirm-password">
             <button onclick="register()">Register</button>
+            <div class="error-message" id="error-message"></div>
             <div class="social-buttons">
-                <a href="yhttps://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=86sj54i09odtrh&redirect_uri=https://mywebsite.com/linkedin/callback&scope=r_liteprofile%20r_emailaddress
-                " target="_blank">
+                <a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=86sj54i09odtrh&redirect_uri=https://mywebsite.com/linkedin/callback&scope=r_liteprofile%20r_emailaddress" target="_blank">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo"> Continue via LinkedIn
                 </a>
                 <a href="https://my.unt.edu/" target="_blank">
@@ -120,8 +127,32 @@
 
     <script>
         function register() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const errorMessage = document.getElementById('error-message');
+            const successMessage = document.getElementById('success-message');
+
+            // Clear previous messages
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+
+            // Validate input fields
+            if (!email || !password || !confirmPassword) {
+                errorMessage.textContent = 'Please fill in all fields.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Passwords do not match.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
             // Simulate registration success
-            document.getElementById('success-message').style.display = 'block';
+            successMessage.style.display = 'block';
         }
     </script>
 </body>
