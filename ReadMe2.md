@@ -1,6 +1,6 @@
 # UNT Alumni Signup
 
-This project is a web application that allows UNT alumni to sign up using their email or LinkedIn account.
+This page is a webpage that allows UNT alumni to sign up using their email or LinkedIn account.
 
 ## Features
 
