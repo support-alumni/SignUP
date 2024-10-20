@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNT Alumni Signup</title>
+    <style>
+        /* Basic styles for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('grad-pic.png') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: rgba(0, 128, 0, 0.8); /* UNT green overlay */
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            text-align: center;
+            color: #000000;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            color: #008000; /* UNT green */
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-container button {
+            background-color: #008000;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: #006400; /* Darker green */
+        }
+
+        .social-buttons img {
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+        }
+
+        .social-buttons a {
+            display: block;
+            margin-top: 10px;
+            color: #ffffff;
+            background-color: #0072b1; /* LinkedIn blue */
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .social-buttons a:nth-child(2) {
+            background-color: #0078D4; /* UNT email color */
+        }
+
+        .success-message {
+            color: #008000;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .logo img {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="UNT-Alumni-logo-1.png" alt="UNT Alumni Logo">
+        </div>
+        <div class="form-container">
+            <h2>Create an Account</h2>
+            <input type="email" placeholder="Email ID" id="email">
+            <input type="password" placeholder="Create a Password" id="password">
+            <button onclick="register()">Register</button>
+            <div class="social-buttons">
+                <a href="yhttps://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=86sj54i09odtrh&redirect_uri=https://mywebsite.com/linkedin/callback&scope=r_liteprofile%20r_emailaddress
+                " target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn Logo"> Continue via LinkedIn
+                </a>
+                <a href="https://my.unt.edu/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg" alt="Email Logo"> Continue via UNT Email
+                </a>
+            </div>
+            <div class="success-message" id="success-message">Registration Successful. You can now verify your email and log in.</div>
+        </div>
+    </div>
+
+    <script>
+        function register() {
+            // Simulate registration success
+            document.getElementById('success-message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
