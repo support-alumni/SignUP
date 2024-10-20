@@ -3,12 +3,12 @@ import requests
 import os
 
 app = Flask(__name__)
-app.secret_key = 'YOUR_SECRET_KEY'  # Replace with your own secret key
+app.secret_key = 'WPL_AP1.HOjCrpkLrg9FRGli.f8dw+g=='  # Replace with your own secret key
 
 # Your LinkedIn app credentials
-CLIENT_ID = 'YOUR_CLIENT_ID'
-CLIENT_SECRET = 'YOUR_CLIENT_SECRET'
-REDIRECT_URI = 'YOUR_REDIRECT_URI'
+CLIENT_ID = '86sj54i09odtrh'
+CLIENT_SECRET = 'WPL_AP1.HOjCrpkLrg9FRGli.f8dw+g=='
+REDIRECT_URI = 'https://mywebsite.com/linkedin/callback'
 
 @app.route('/')
 def home():
@@ -42,9 +42,9 @@ def exchange_code_for_access_token(auth_code):
     payload = {
         'grant_type': 'authorization_code',
         'code': auth_code,
-        'redirect_uri': REDIRECT_URI,
-        'client_id': CLIENT_ID,
-        'client_secret': CLIENT_SECRET
+        'redirect_uri': 'https://mywebsite.com/linkedin/callback',
+        'client_id': '86sj54i09odtrh',
+        'client_secret': 'https://mywebsite.com/linkedin/callback'
     }
     response = requests.post(url, data=payload)
     return response.json().get('access_token')
