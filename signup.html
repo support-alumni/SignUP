@@ -122,7 +122,7 @@
                 </a>
             </div>
             
-            <div class="success-message" id="success-message">Registration Successful. You can now verify your email and log in.</div>
+            <div class="success-message" id="success-message">Registration Successfully Completed. You can now log in.</div>
         </div>
     </div>
 
@@ -147,7 +147,7 @@
 
             // Check if passwords match
             if (password !== confirmPassword) {
-                errorMessage.textContent = 'Passwords do not match.';
+                errorMessage.textContent = 'Passwords do not match. Please try again.';
                 errorMessage.style.display = 'block';
                 return;
             }
