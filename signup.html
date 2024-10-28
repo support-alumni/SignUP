@@ -145,6 +145,13 @@
                 return;
             }
 
+            // Check for valid email format
+            if (!email.includes('@')) {
+                errorMessage.textContent = 'Please enter a valid email address.';
+                errorMessage.style.display = 'block';
+                return;
+            }
+
             // Check if passwords match
             if (password !== confirmPassword) {
                 errorMessage.textContent = 'Passwords do not match. Please try again.';
